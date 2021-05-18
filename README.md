@@ -48,7 +48,7 @@
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :address
+- has_one :address
 
 ## addressテーブル
 
@@ -60,7 +60,9 @@
 | address        | string  | null: false |
 | buildingname   | string  |             |
 | phone          | string  | null: false |
-
+| buy_id        | references | foreign_key: true  |
 ## Association
 
 - belongs_to :buy
+
+
