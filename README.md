@@ -2,16 +2,16 @@
 
 ## users テーブル
 
-| Column    | Type    | Options     |
-| --------- | ------- | ----------- |
-| nickname  | string  | null: false |
-| email     | string  | null: false |
-| password  | string  | null: false |
-| lastname  | string  | null: false |
-| firstname | string  | null: false |
-| lastkana  | string  | null: false |
-| firstkana | string  | null: false |
-| birthday  | integer | null: false |
+| Column    | Type   | Options     |
+| --------- | ------ | ----------- |
+| nickname  | string | null: false |
+| email     | string | null: false |
+| password  | string | null: false |
+| lastname  | string | null: false |
+| firstname | string | null: false |
+| lastkana  | string | null: false |
+| firstkana | string | null: false |
+| birthday  | date   | null: false |
 
 ## Association
 
@@ -20,28 +20,28 @@
 
 ## itemsテーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| title       | string     | null: false                    |
-| description | text       | null: false                    |
-| category    | string     | null: false                    |
-| status      | string     | null: false                    |
-| shipping    | string     | null: false                    |
-| area        | string     | null: false                    |
-| day         | integer    | null: false                    |
-| user        | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| title         | string     | null: false                    |
+| description   | text       | null: false                    |
+| category_id   | integer    | null: false                    |
+| condition_id  | integer    | null: false                    |
+| shipping_id   | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| day_id        | integer    | null: false                    |
+| user          | references | null: false, foreign_key: true |
 
 ## Association
 
 - belongs_to :user
-- belongs_to :buy
+- has_one :buy
 
 ## buysテーブル
 
 | Column         | Type       | Options            |
 | -------------- | ---------- | ------------------ |
-| user_id        | references | foreign_key: true  |
-| item_id        | references | foreign_key: true  |
+| user           | references | foreign_key: true  |
+| item           | references | foreign_key: true  |
 
 ## Association
 
@@ -53,11 +53,11 @@
 | Column         | Type    | Options     |
 | -------------- | ------- | ----------- |
 | postal         | integer | null: false |
-| prefectures    | string  | null: false |
+| prefectures_id | string  | null: false |
 | municipalities | string  | null: false |
 | address        | string  | null: false |
 | buildingname   | string  |             |
-| phone          | integer | null: false |
+| phone          | string  | null: false |
 
 ## Association
 
