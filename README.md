@@ -52,15 +52,15 @@
 
 ## addressテーブル
 
-| Column         | Type    | Options     |
-| -------------- | ------- | ----------- |
-| postal         | string  | null: false |
-| prefectures_id | integer | null: false |
-| municipalities | string  | null: false |
-| address        | string  | null: false |
-| buildingname   | string  |             |
-| phone          | string  | null: false |
-| buy_id        | references | foreign_key: true  |
+| Column         | Type       | Options           |
+| -------------- | ---------- | ----------------- |
+| postal         | string     | null: false       |
+| prefecture_id  | integer    | null: false       |
+| municipalities | string     | null: false       |
+| address        | string     | null: false       |
+| buildingname   | string     |                   |
+| phone          | string     | null: false       |
+| buy            | references | foreign_key: true |
 ## Association
 
 - belongs_to :buy
