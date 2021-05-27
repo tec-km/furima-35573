@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   
   
   def index
-    
+    @items= Item.all.order("created_at DESC")
   end
 
   #def edit
@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
   end
 
   #def show  
+
   #end
 
 
