@@ -13,9 +13,9 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  def show  
-  
-  end
+  #def show  
+
+  #end
 
 
   def create
