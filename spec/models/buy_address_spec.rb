@@ -61,7 +61,7 @@ RSpec.describe BuyAddress, type: :model do
     it '電話番号が11桁以内の数値でないと購入出来ない' do
       @buy_address.phone = '123456789012'
       @buy_address.valid?
-      expect(@buy_address.errors.full_messages).to include("Phone is too long (maximum is 11 characters)")
+      expect(@buy_address.errors.full_messages).to include("Phone is invalid")
     end
     
     it '電話番号が半角英数字混合だと購入出来ない' do
