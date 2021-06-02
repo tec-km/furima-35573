@@ -14,10 +14,3 @@ FactoryBot.define do
   end
 end
 
-
-
-#lastname              {Faker::Japanese::Name.last_name}
-#firstname             {Faker::Japanese::Name.first_name}
-#lastkana              {Faker::Name.lastkanaName}
-#firstkana             {Faker::Name.fiestKanaName}
-#birthday              {Faker::Date.birthday}

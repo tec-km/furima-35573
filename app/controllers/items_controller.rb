@@ -53,12 +53,12 @@ end
     params.require(:item).permit(:image, :title, :description, :category_id, :condition_id, :shipping_id, :prefecture_id, :day_id, :price).merge(user_id: current_user.id)
   end
 
-def  set_item
+def set_item
   @item = Item.find(params[:id])
 end
 
 def move_to_index
-  if current_user.id != @item.user_id 
+  if current_user.id != @item.user_id || @item.buy.present?
     redirect_to root_path
   end
 end
