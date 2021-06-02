@@ -64,6 +64,18 @@ RSpec.describe BuyAddress, type: :model do
       expect(@buy_address.errors.full_messages).to include("Phone is too long (maximum is 11 characters)")
     end
     
+    it '電話番号が半角英数字混合だと購入出来ない' do
+      @buy_address.phone = 'aa123456789'
+      @buy_address.valid?
+      expect(@buy_address.errors.full_messages).to include("Phone is invalid")
+    end
+
+    it '電話番号全角数字だと購入出来ない' do
+      @buy_address.phone = '１２３４５６７８９０'
+      @buy_address.valid?
+      expect(@buy_address.errors.full_messages).to include("Phone is invalid")
+    end
+
     it 'ユーザー情報が入力されていないと購入出来ない' do
       @buy_address.user_id = ''
       @buy_address.valid?
