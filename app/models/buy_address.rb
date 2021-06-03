@@ -17,11 +17,9 @@ class BuyAddress
   validates :phone, format: {with:/\A\d{10,11}\z/}
   validates :prefecture_id ,numericality: { other_than: 1 }
   
-  
   def save
   buy = Buy.create(item_id: item_id, user_id: user_id)
   Address.create(postal: postal, prefecture_id: prefecture_id, municipalities: municipalities, address: address, buildingname: buildingname, phone: phone, buy_id: buy.id)
-
   end
   
 end
